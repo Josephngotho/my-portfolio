@@ -1,4 +1,6 @@
 import { useTheme } from './hooks/useTheme'
+import { usePWAInstall } from './hooks/usePWAInstall'
+import { IOSInstallModal, OfflineBanner } from './components/InstallPrompt'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -11,10 +13,17 @@ import Footer from './components/Footer'
 
 export default function App() {
   const { theme, toggle } = useTheme()
+  const pwa = usePWAInstall()
 
   return (
     <div className="site-body">
-      <Navbar theme={theme} onToggleTheme={toggle} />
+      <OfflineBanner />
+      <Navbar
+        theme={theme}
+        onToggleTheme={toggle}
+        canInstall={pwa.canInstall}
+        onInstall={pwa.promptInstall}
+      />
 
       <main id="main-content">
         <Hero />
@@ -27,6 +36,11 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <IOSInstallModal
+        isOpen={pwa.showIOSGuide}
+        onClose={pwa.closeIOSGuide}
+      />
     </div>
   )
 }

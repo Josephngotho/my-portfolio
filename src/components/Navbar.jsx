@@ -4,6 +4,7 @@ import { socialLinks } from '../data/social'
 import { Sun, Moon, Menu, X } from 'lucide-react'
 import { resolveImage } from '../utils/imageLoader'
 import { GithubIcon, InstagramIcon, FacebookIcon, TikTokIcon } from './SocialBrandIcons'
+import { InstallButton } from './InstallPrompt'
 
 const NAV_LINKS = [
   { href: '#home', label: 'Home' },
@@ -69,7 +70,7 @@ function ProfileAvatar({ size = 36, className = '' }) {
 
 export { ProfileAvatar, SocialIcon }
 
-export default function Navbar({ theme, onToggleTheme }) {
+export default function Navbar({ theme, onToggleTheme, canInstall, onInstall }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
 
@@ -151,6 +152,8 @@ export default function Navbar({ theme, onToggleTheme }) {
 
           {/* Actions */}
           <div className="nav-actions">
+            <InstallButton canInstall={canInstall} promptInstall={onInstall} />
+
             <button
               className="theme-toggle"
               onClick={onToggleTheme}
@@ -212,6 +215,19 @@ export default function Navbar({ theme, onToggleTheme }) {
             </li>
           ))}
         </ul>
+
+        {canInstall && (
+          <div className="mobile-nav-install">
+            <InstallButton
+              canInstall={canInstall}
+              promptInstall={() => {
+                setMobileOpen(false)
+                onInstall()
+              }}
+              className="w-full"
+            />
+          </div>
+        )}
 
         {configuredSocials.length > 0 && (
           <div className="footer-social" style={{ marginTop: 24 }}>

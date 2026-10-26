@@ -1529,3 +1529,201 @@ html.dark {
     display: none;
   }
 }
+
+/* ================================================================
+   PWA & INSTALL EXPERIENCE STYLES
+   ================================================================ */
+
+.btn-install {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 38px;
+  text-decoration: none;
+}
+
+.btn-install:hover,
+.btn-install:focus-visible {
+  background-color: var(--accent-light);
+  border-color: var(--accent-light);
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.mobile-nav-install {
+  margin: 16px 0 8px;
+  width: 100%;
+}
+
+.mobile-nav-install .btn-install {
+  width: 100%;
+  padding: 10px 16px;
+  min-height: 44px;
+}
+
+.offline-notification-bar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background-color: #1e242e;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  animation: pwaSlideDown 0.3s ease;
+}
+
+@keyframes pwaSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.offline-notification-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.install-modal-content {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: pwaModalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pwaModalIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.install-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.install-modal-icon {
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.install-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 2px;
+}
+
+.install-modal-subtitle {
+  font-size: 13px;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.install-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.install-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.install-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.install-step-title {
+  font-size: 14px;
+  color: var(--text);
+  margin: 0 0 2px;
+  line-height: 1.4;
+}
+
+.install-step-desc {
+  font-size: 12px;
+  color: var(--text-3);
+  margin: 0;
+}
+
+/* Screen width refinements for 320px - 430px */
+@media (max-width: 380px) {
+  .section {
+    padding: 56px 14px;
+  }
+  .hero {
+    padding: 72px 14px 40px;
+  }
+  .hero-name {
+    font-size: 28px;
+  }
+  .hero-portrait {
+    width: 140px;
+    height: 140px;
+  }
+  .filter-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .contact-card {
+    padding: 14px;
+  }
+  .footer-inner {
+    padding: 40px 14px 24px;
+  }
+}
+
