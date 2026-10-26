@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Joseph Kibaara Ngotho — Software Developer & Graphic Designer | KibaraTechs</title>
+    <meta name="title" content="Joseph Kibaara Ngotho — Software Developer & Graphic Designer | KibaraTechs" />
+    <meta
+      name="description"
+      content="Joseph Kibaara Ngotho is a software developer, graphic designer, and CEO of NovaStack Developers based in Chuka, Kenya. Building management systems, web applications, and automation solutions."
+    />
+    <meta name="author" content="Joseph Kibaara Ngotho" />
+    <meta name="keywords" content="software developer, graphic designer, management systems, web development, Chuka Kenya, KibaraTechs, NovaStack Developers" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Joseph Kibaara Ngotho — Software Developer & Graphic Designer" />
+    <meta
+      property="og:description"
+      content="Software developer, graphic designer, and CEO of NovaStack Developers. Building practical digital solutions from Chuka, Kenya."
+    />
+    <meta property="og:locale" content="en_KE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Joseph Kibaara Ngotho — Software Developer & Graphic Designer" />
+    <meta
+      name="twitter:description"
+      content="Software developer, graphic designer, and CEO of NovaStack Developers. Building practical digital solutions from Chuka, Kenya."
+    />
+
+    <!-- Favicon placeholder — replace /favicon.ico with your real logo -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts — Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme flash prevention -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('kibara-theme')
+          if (stored === 'light') {
+            document.documentElement.classList.remove('dark')
+          } else if (stored === 'dark') {
+            document.documentElement.classList.add('dark')
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark')
+          }
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
